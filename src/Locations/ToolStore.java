@@ -53,7 +53,7 @@ public class ToolStore extends NormalLoc {
 		case 2:
 			avoid = 3;
 			aName = "Orta Zýrh";
-			price = 15;
+			price = 25;
 			break;
 		case 3:
 			avoid = 5;
