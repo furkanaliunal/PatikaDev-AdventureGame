@@ -88,6 +88,9 @@ public class ToolStore extends NormalLoc {
 			break;
 		}
 
+		if (newArmor == null) {
+			return;
+		}
 		if (newArmor.getPrice() > 0) {
 			if (player.getMoney() >= newArmor.getPrice()) {
 				player.setMoney(player.getMoney() - newArmor.getPrice());
@@ -134,9 +137,11 @@ public class ToolStore extends NormalLoc {
 			System.out.println("Geçersiz Ýþlem !");
 			break;
 		}
-
+		if (newWeapon == null) {
+			return;
+		}
 		if (newWeapon.getPrice() > 0) {
-			if (player.getMoney() > newWeapon.getPrice()) {
+			if (player.getMoney() >= newWeapon.getPrice()) {
 				player.setMoney(player.getMoney() - newWeapon.getPrice());
 				System.out.println(player.getInv().getWeaponName() + " satýn aldýnýz, Önceki Hasar :" + player.getDamage() + ", Yeni Hasar : "
 						+ player.getTotalDamage());
