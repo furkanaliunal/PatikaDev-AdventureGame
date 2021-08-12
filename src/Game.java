@@ -61,11 +61,11 @@ public class Game {
 				location = new SafeHouse(player);
 			}
 
-			if (location.getClass().getName().equals("SafeHouse")) {
-				if (player.getInv().isFirewood() && player.getInv().isFood() && player.getInv().isWater()) {
+			if (location.getName().equals("SafeHouse")) {
+				/*if (player.getInv().isFirewood() && player.getInv().isFood() && player.getInv().isWater()) {
 					System.out.println("Tebrikler Oyunu Kazandýnýz !");
 					break;
-				}
+				}*///Check for has player have all quest items
 			}
 			if (!location.getLocation()) {
 				System.out.println("Oyun Bitti !");
