@@ -22,4 +22,11 @@ public abstract class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	@Override
+	public String toString() {
+		//Example output: Test eþyasý \t <Para : 15>
+		return this.name + " \t <Para : " + this.price+">";
+		
+	}
 }
