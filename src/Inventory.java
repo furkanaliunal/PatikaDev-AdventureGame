@@ -13,6 +13,7 @@ public class Inventory {
 		this.damage = 0;
 		this.armor = 0;
 		this.trophyAmount = 0;
+		
 	}
 
 	public void addItem(IMaterial item) {
@@ -62,6 +63,9 @@ public class Inventory {
 				}
 			}
 		}
+		if (mainWeapon == null) {
+			return "Air";
+		}
 		return mainWeapon.getName();
 	}
 	
@@ -74,6 +78,9 @@ public class Inventory {
 					mainArmor = currWeapon;
 				}
 			}
+		}
+		if (mainArmor == null) {
+			return "Air";
 		}
 		return mainArmor.getName();
 	}
