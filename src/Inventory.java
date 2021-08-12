@@ -1,74 +1,81 @@
 package src;
 
+import java.util.HashSet;
+
+import src.Material.*;
+
 public class Inventory {
-	private boolean water,food,firewood;
-	private String wName,aName;
-	private int damage,armor;
+	HashSet<IMaterial> items;
+	private int damage,armor, trophyAmount;
 	
 	Inventory(){
-		this.water = false;
-		this.food = false;
-		this.firewood = false;
+		items = new HashSet<>();
 		this.damage = 0;
 		this.armor = 0;
-		this.wName = null;
-		this.aName = null;
+		this.trophyAmount = 0;
 	}
 
-	public boolean isWater() {
-		return water;
+	public void addItem(IMaterial item) {
+		Boolean hasItem = hasItem(item);
+		if (hasItem) {
+			System.out.println("Bu item zaten mevcut!!");
+			return;
+		}
+		switch(item.getMaterialType()) {
+			case Armor:
+				Armor newArmor = (Armor)item;
+				this.armor += newArmor.getArmor();
+				break;
+			case Weapon:
+				Weapon newWeapon = (Weapon)item;
+				this.damage += newWeapon.getDamage();
+				break;
+			case Trophy:
+				this.trophyAmount++;
+				break;
+			}
+			items.add(item);
 	}
-
-	public void setWater(boolean water) {
-		this.water = water;
-	}
-
-	public boolean isFood() {
-		return food;
-	}
-
-	public void setFood(boolean food) {
-		this.food = food;
-	}
-
-	public boolean isFirewood() {
-		return firewood;
-	}
-
-	public void setFirewood(boolean firewood) {
-		this.firewood = firewood;
-	}
-
-	public String getwName() {
-		return wName;
-	}
-
-	public void setwName(String wName) {
-		this.wName = wName;
-	}
-
-	public String getaName() {
-		return aName;
-	}
-
-	public void setaName(String aName) {
-		this.aName = aName;
-	}
-
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
+	
+	private Boolean hasItem(IMaterial item) {
+		return items.contains(item);
 	}
 
 	public int getArmor() {
 		return armor;
 	}
-
-	public void setArmor(int armor) {
-		this.armor = armor;
+	public int getDamage() {
+		return this.damage;
+	}
+	
+	public int getTrophyAmount() {
+		return this.trophyAmount;
+	}
+	
+	public String getWeaponName() {
+		Weapon mainWeapon = null;
+		for(IMaterial m : items) {
+			if (m.getMaterialType() == MaterialType.Weapon) {
+				Weapon currWeapon = (Weapon)m;
+				if  (mainWeapon == null || currWeapon.getDamage() > mainWeapon.getDamage()){
+					mainWeapon = currWeapon;
+				}
+			}
+		}
+		return mainWeapon.getName();
+	}
+	
+	public String getArmorName() {
+		Armor mainArmor = null;
+		for(IMaterial m : items) {
+			if (m.getMaterialType() == MaterialType.Armor) {
+				Armor currWeapon = (Armor)m;
+				if  (mainArmor == null || currWeapon.getArmor() > mainArmor.getArmor()){
+					mainArmor = currWeapon;
+				}
+			}
+		}
+		return mainArmor.getName();
 	}
 	
 	
