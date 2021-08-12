@@ -4,7 +4,7 @@ import src.Material.Weapon;
 
 public class Sword extends Weapon{
 
-	public Sword(String name, int price, int damage) {
+	public Sword() {
 		super("Kýlýç", 35, 3);
 	}
 
