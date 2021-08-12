@@ -5,7 +5,7 @@ import src.Material.Weapon;
 public class Sword extends Weapon{
 
 	public Sword() {
-		super("Kýlýç", 35, 3);
+		super("KÄ±lÄ±Ã§", 35, 3);
 	}
 
 }

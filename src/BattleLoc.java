@@ -15,22 +15,22 @@ public abstract class BattleLoc extends Location {
 
 	public boolean getLocation() {
 		int obsCount = obstacle.count();
-		System.out.println("Þuan buradasýnýz : " + this.getName());
-		System.out.println("Dikkatli ol! Burada " + obsCount + " tane " + obstacle.getName() + " yaþýyor !");
-		System.out.print("<S>avaþ veya <K>aç :");
+		System.out.println("Åžuan buradasÄ±nÄ±z : " + this.getName());
+		System.out.println("Dikkatli ol! Burada " + obsCount + " tane " + obstacle.getName() + " yaï¿½ï¿½yor !");
+		System.out.print("<S>avaÅŸ veya <K>aÃ§ :");
 		String selCase = scan.nextLine();
 		selCase = selCase.toUpperCase();
 		if (selCase.equals("S")) {
 			if (combat(obsCount)) {
-				System.out.println(this.getName() + " bölgesindeki tüm düþmanlarý temizlediniz !");
+				System.out.println(this.getName() + " bÃ¶lgesindeki tÃ¼m dÃ¼ÅŸmanlarÄ± temizlediniz !");
 				/*if (this.award.equals("Food") && player.getInv().isFood() == false) {
-					System.out.println(this.award + " Kazandýnýz! ");
+					System.out.println(this.award + " Kazandï¿½nï¿½z! ");
 					player.getInv().setFood(true);
 				} else if (this.award.equals("Water") && player.getInv().isWater() == false) {
-					System.out.println(this.award + " Kazandýnýz! ");
+					System.out.println(this.award + " Kazandï¿½nï¿½z! ");
 					player.getInv().setWater(true);
 				} else if (this.award.equals("Firewood") && player.getInv().isFirewood() == false) {
-					System.out.println(this.award + " Kazandýnýz! ");
+					System.out.println(this.award + " Kazandï¿½nï¿½z! ");
 					player.getInv().setFirewood(true);
 				}*/
 				//Give reward when area completed
@@ -38,7 +38,7 @@ public abstract class BattleLoc extends Location {
 			}
 			
 			if(player.getHealthy() <= 0) {
-				System.out.println("Öldünüz !");
+				System.out.println("Ã–ldÃ¼nÃ¼z !");
 				return false;
 			}
 		
@@ -52,7 +52,7 @@ public abstract class BattleLoc extends Location {
 			playerStats();
 			enemyStats();
 			while (player.getHealthy() > 0 && obstacle.getHealth() > 0) {
-				System.out.print("<V>ur veya <K>aç :");
+				System.out.print("<V>ur veya <K>aÃ§ :");
 				String selCase = scan.nextLine();
 				selCase = selCase.toUpperCase();
 				if (selCase.equals("V")) {
@@ -71,9 +71,9 @@ public abstract class BattleLoc extends Location {
 			}
 
 			if (obstacle.getHealth() < player.getHealthy()) {
-				System.out.println("Düþmaný yendiniz !");
+				System.out.println("DÃ¼ÅŸmanÄ± yendiniz !");
 				player.setMoney(player.getMoney() + obstacle.getAward());
-				System.out.println("Güncel Paranýz : " + player.getMoney());
+				System.out.println("GÃ¼ncel ParanÄ±z : " + player.getMoney());
 				obstacle.setHealth(defObsHealth);
 			} else {
 				return false;
@@ -84,7 +84,7 @@ public abstract class BattleLoc extends Location {
 	}
 
 	public void playerStats() {
-		System.out.println("Oyuncu Deðerleri\n--------------");
+		System.out.println("Oyuncu DeÄŸerleri\n--------------");
 		System.out.println("Can:" + player.getHealthy());
 		System.out.println("Hasar:" + player.getTotalDamage());
 		System.out.println("Para:" + player.getMoney());
@@ -92,20 +92,20 @@ public abstract class BattleLoc extends Location {
 			System.out.println("Silah:" + player.getInv().getWeaponName());
 		}
 		if (player.getInv().getArmor() > 0) {
-			System.out.println("Zýrh:" + player.getInv().getArmorName());
+			System.out.println("Zï¿½rh:" + player.getInv().getArmorName());
 		}
 	}
 
 	public void enemyStats() {
-		System.out.println("\n" + obstacle.getName() + " Deðerleri\n--------------");
+		System.out.println("\n" + obstacle.getName() + " DeÄŸerleri\n--------------");
 		System.out.println("Can:" + obstacle.getHealth());
 		System.out.println("Hasar:" + obstacle.getDamage());
-		System.out.println("Ödül:" + obstacle.getAward());
+		System.out.println("Ã–dÃ¼l:" + obstacle.getAward());
 	}
 
 	public void afterHit() {
-		System.out.println("Oyuncu Caný:" + player.getHealthy());
-		System.out.println(obstacle.getName() + " Caný:" + obstacle.getHealth());
+		System.out.println("Oyuncu CanÄ±:" + player.getHealthy());
+		System.out.println(obstacle.getName() + " CanÄ±:" + obstacle.getHealth());
 		System.out.println();
 	}
 

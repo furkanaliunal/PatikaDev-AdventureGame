@@ -5,6 +5,6 @@ import src.Material.Armor;
 public class MediumArmor extends Armor{
 
 	public MediumArmor() {
-		super("Orta Zýrh", 25, 2);
+		super("Orta ZÄ±rh", 25, 2);
 	}
 }

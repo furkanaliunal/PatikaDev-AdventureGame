@@ -15,8 +15,8 @@ public class Game {
 
 	public void login() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Macera Oyununa Hoþgeldiniz !");
-		System.out.println("Oyuna baþlamadan önce isminizi giriniz : a");
+		System.out.println("Macera Oyununa HoÅŸgeldiniz !");
+		System.out.println("Oyuna baÅŸlamadan Ã¶nce isminizi giriniz : a");
 		String playerName = scan.nextLine();
 		player = new Player("a");
 		player.selectCha();
@@ -28,16 +28,16 @@ public class Game {
 			System.out.println();
 			System.out.println("=================================================");
 			System.out.println();
-			System.out.println("Eylem gerçekleþtirmek için bir yer seçiniz : ");
-			System.out.println("1. Güvenli Ev --> Size ait güvenli bir mekan, düþman yok !");
-			System.out.println("2. Maðara --> Karþýnýza belki zombi çýkabilir !");
-			System.out.println("3. Orman --> Karþýnýza belki vampir çýkabilir !");
-			System.out.println("4. Nehir --> Karþýnýza belki ayý çýkabilir !");
-			System.out.println("5. Maðaza --> Silah veya Zýrh alabilirsiniz!");
-			System.out.print("Gitmek istediðiniz yer : ");
+			System.out.println("Eylem gerÃ§ekleÅŸtirmek iÃ§in bir yer seÃ§iniz : ");
+			System.out.println("1. GÃ¼venli Ev --> Size ait gÃ¼venli bir mekan, dÃ¼ÅŸman yok !");
+			System.out.println("2. MaÄŸara --> KarÅŸÄ±nÄ±za belki zombi Ã§Ä±kabilir !");
+			System.out.println("3. Orman --> KarÅŸÄ±nÄ±za belki vampir Ã§Ä±kabilir !");
+			System.out.println("4. Nehir --> KarÅŸÄ±nÄ±za belki ayÄ± Ã§Ä±kabilir !");
+			System.out.println("5. MaÄŸaza --> Silah veya ZÄ±rh alabilirsiniz!");
+			System.out.print("Gitmek istediÄŸiniz yer : ");
 			int selLoc = scan.nextInt();
 			while (selLoc < 0 || selLoc > 5) {
-				System.out.print("Lütfen geçerli bir yer seçiniz : ");
+				System.out.print("LÃ¼tfen geÃ§erli bir yer seÃ§iniz : ");
 				selLoc = scan.nextInt();
 			}
 
@@ -63,7 +63,7 @@ public class Game {
 
 			if (location.getName().equals("SafeHouse")) {
 				/*if (player.getInv().isFirewood() && player.getInv().isFood() && player.getInv().isWater()) {
-					System.out.println("Tebrikler Oyunu Kazandýnýz !");
+					System.out.println("Tebrikler Oyunu Kazandï¿½nï¿½z !");
 					break;
 				}*///Check for has player have all quest items
 			}

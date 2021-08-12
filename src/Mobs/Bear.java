@@ -3,7 +3,7 @@ package src.Mobs;
 public class Bear extends Obstacle {
 
 	public Bear() {
-		super("Ayı", 7, 20, 12, 2);
+		super("AyÄ±", 7, 20, 12, 2);
 	}
 
 }

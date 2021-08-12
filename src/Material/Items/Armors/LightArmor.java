@@ -5,7 +5,7 @@ import src.Material.Armor;
 public class LightArmor extends Armor{
 
 	public LightArmor() {
-		super("Hafif Zýrh", 15, 1);
+		super("Hafif ZÄ±rh", 15, 1);
 	}
 
 }

@@ -5,7 +5,7 @@ import src.Material.Weapon;
 public class Shotgun extends Weapon{
 
 	public Shotgun() {
-		super("Tüfek", 45, 7);
+		super("TÃ¼fek", 45, 7);
 	}
 
 }

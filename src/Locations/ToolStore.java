@@ -15,7 +15,7 @@ public class ToolStore extends NormalLoc {
 	Set<Weapon> weapons;
 
 	public ToolStore(Player player) {
-		super(player, "Maðaza");
+		super(player, "MaÄŸaza");
 		armors = new HashSet<>();
 		weapons = new HashSet<>();
 		
@@ -31,9 +31,9 @@ public class ToolStore extends NormalLoc {
 	public boolean getLocation() {
 		System.out.println("Para : " + player.getMoney());
 		System.out.println("1. Silahlar");
-		System.out.println("2. Zýrhlar");
-		System.out.println("3. Çýkýþ");
-		System.out.print("Seçiminiz : ");
+		System.out.println("2. ZÄ±rhlar");
+		System.out.println("3. Ã‡Ä±kÄ±ÅŸ");
+		System.out.print("SeÃ§iminiz : ");
 		int selTool = scan.nextInt();
 		int selItemID;
 		switch (selTool) {
@@ -61,9 +61,9 @@ public class ToolStore extends NormalLoc {
 		
 		/*System.out.println("1. Hafif \t <Para : 15 - Hasar : 1>");
 		System.out.println("2. Orta \t <Para : 25 - Hasar : 3>");
-		System.out.println("3. Aðýr \t <Para : 40 - Hasar : 5>");*/
-		System.out.println("4. Çýkýþ");
-		System.out.print("Silah Seçiniz : ");
+		System.out.println("3. Aï¿½ï¿½r \t <Para : 40 - Hasar : 5>");*/
+		System.out.println("4. Ã‡Ä±kÄ±ÅŸ");
+		System.out.print("Silah SeÃ§iniz : ");
 		int selArmorID = scan.nextInt();
 		return selArmorID;
 	}
@@ -81,10 +81,10 @@ public class ToolStore extends NormalLoc {
 			newArmor = new HeavyArmor();
 			break;
 		case 4:
-			System.out.println("Çýkýþ Yapýlýyor.");
+			System.out.println("Ã‡Ä±kÄ±ÅŸ YapÄ±lÄ±yor.");
 			break;
 		default:
-			System.out.println("Geçersiz Ýþlem !");
+			System.out.println("GeÃ§ersiz iÅŸlem !");
 			break;
 		}
 
@@ -94,7 +94,7 @@ public class ToolStore extends NormalLoc {
 		if (newArmor.getPrice() > 0) {
 			if (player.getMoney() >= newArmor.getPrice()) {
 				player.setMoney(player.getMoney() - newArmor.getPrice());
-				System.out.println(player.getInv().getArmorName() + " satýn aldýnýz, Engellenen Hasar : " + player.getInv().getArmor());
+				System.out.println(player.getInv().getArmorName() + " satÄ±n aldÄ±nÄ±z, Engellenen Hasar : " + player.getInv().getArmor());
 				System.out.println("Kalan Para :" + player.getMoney());
 			} else {
 				System.out.println("Para yetersiz. !");
@@ -110,10 +110,10 @@ public class ToolStore extends NormalLoc {
 		}
 		
 		/*System.out.println("1. Tabanca\t<Para : 25 - Hasar : 2>");
-		System.out.println("2. Kýlýç\t<Para : 35 - Hasar : 3>");
-		System.out.println("3. Tüfek\t<Para : 45 - Hasar : 7>");*/
-		System.out.println(i + ". Çýkýþ");
-		System.out.print("Silah Seçiniz : ");
+		System.out.println("2. Kï¿½lï¿½ï¿½\t<Para : 35 - Hasar : 3>");
+		System.out.println("3. Tï¿½fek\t<Para : 45 - Hasar : 7>");*/
+		System.out.println(i + ". Ã‡Ä±kÄ±ÅŸ");
+		System.out.print("Silah SeÃ§iniz : ");
 		int selWeaponID = scan.nextInt();
 		return selWeaponID;
 	}
@@ -131,10 +131,10 @@ public class ToolStore extends NormalLoc {
 			newWeapon = new Shotgun();
 			break;
 		case 4:
-			System.out.println("Çýkýþ Yapýlýyor.");
+			System.out.println("Ã‡Ä±kÄ±ÅŸ YapÄ±lÄ±yor.");
 			break;
 		default:
-			System.out.println("Geçersiz Ýþlem !");
+			System.out.println("GeÃ§ersiz iÅŸlem !");
 			break;
 		}
 		if (newWeapon == null) {
@@ -143,7 +143,7 @@ public class ToolStore extends NormalLoc {
 		if (newWeapon.getPrice() > 0) {
 			if (player.getMoney() >= newWeapon.getPrice()) {
 				player.setMoney(player.getMoney() - newWeapon.getPrice());
-				System.out.println(player.getInv().getWeaponName() + " satýn aldýnýz, Önceki Hasar :" + player.getDamage() + ", Yeni Hasar : "
+				System.out.println(player.getInv().getWeaponName() + " satÄ±n aldÄ±nÄ±z, Ã–nceki Hasar :" + player.getDamage() + ", Yeni Hasar : "
 						+ player.getTotalDamage());
 				System.out.println("Kalan Para :" + player.getMoney());
 			} else {
