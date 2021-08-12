@@ -15,4 +15,12 @@ public class Armor extends Item{
 	public void setArmor(int armor) {
 		this.armor = armor;
 	}
+	
+
+	@Override
+	public String toString() {
+		//Example output: Hafif \t <Para : 15 - Hasar : 1>
+		return getName() + " \t <Para : " + getPrice()+"- Hasar : " + getArmor() + ">";
+		
+	}
 }
