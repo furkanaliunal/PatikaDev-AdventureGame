@@ -5,7 +5,7 @@ public class Armor extends Item{
 	public Armor(String name, int price, int armor) {
 		super(name, price);
 		this.armor = armor;
-		this.materialType = MaterialType.armor;
+		this.materialType = MaterialType.Armor;
 	}
 
 	public int getArmor() {
