@@ -23,7 +23,7 @@ public abstract class BattleLoc extends Location {
 		if (selCase.equals("S")) {
 			if (combat(obsCount)) {
 				System.out.println(this.getName() + " bölgesindeki tüm düþmanlarý temizlediniz !");
-				if (this.award.equals("Food") && player.getInv().isFood() == false) {
+				/*if (this.award.equals("Food") && player.getInv().isFood() == false) {
 					System.out.println(this.award + " Kazandýnýz! ");
 					player.getInv().setFood(true);
 				} else if (this.award.equals("Water") && player.getInv().isWater() == false) {
@@ -32,7 +32,8 @@ public abstract class BattleLoc extends Location {
 				} else if (this.award.equals("Firewood") && player.getInv().isFirewood() == false) {
 					System.out.println(this.award + " Kazandýnýz! ");
 					player.getInv().setFirewood(true);
-				}
+				}*/
+				//Give reward when area completed
 				return true;
 			}
 			
@@ -88,10 +89,10 @@ public abstract class BattleLoc extends Location {
 		System.out.println("Hasar:" + player.getTotalDamage());
 		System.out.println("Para:" + player.getMoney());
 		if (player.getInv().getDamage() > 0) {
-			System.out.println("Silah:" + player.getInv().getwName());
+			System.out.println("Silah:" + player.getInv().getWeaponName());
 		}
 		if (player.getInv().getArmor() > 0) {
-			System.out.println("Zýrh:" + player.getInv().getaName());
+			System.out.println("Zýrh:" + player.getInv().getArmorName());
 		}
 	}
 
