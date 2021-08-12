@@ -4,7 +4,7 @@ import src.Material.Armor;
 
 public class MediumArmor extends Armor{
 
-	public MediumArmor(String name, int price, int armor) {
+	public MediumArmor() {
 		super("Orta Zýrh", 25, 2);
 	}
 }
