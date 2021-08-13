@@ -58,10 +58,7 @@ public class ToolStore extends NormalLoc {
 		while(it.hasNext()) {
 			System.out.println(i++ + ". " + it.next().toString());
 		}
-		
-		/*System.out.println("1. Hafif \t <Para : 15 - Hasar : 1>");
-		System.out.println("2. Orta \t <Para : 25 - Hasar : 3>");
-		System.out.println("3. A��r \t <Para : 40 - Hasar : 5>");*/
+
 		System.out.println("4. Çıkış");
 		System.out.print("Silah Seçiniz : ");
 		int selArmorID = scan.nextInt();
@@ -69,31 +66,28 @@ public class ToolStore extends NormalLoc {
 	}
 	
 	public void buyArmor(int itemID) {
-		Armor newArmor = null;
-		switch (itemID) {
-		case 1:
-			newArmor = new LightArmor();
-			break;
-		case 2:
-			newArmor = new MediumArmor();
-			break;
-		case 3:
-			newArmor = new HeavyArmor();
-			break;
-		case 4:
+		int exitID = armors.size() + 1;
+		if (itemID >= exitID){
 			System.out.println("Çıkış Yapılıyor.");
-			break;
-		default:
-			System.out.println("Geçersiz işlem !");
-			break;
+			return;
 		}
 
+		Armor newArmor = null;
+		Iterator<Armor> it = armors.iterator();
+
+		for(int i = 1; i < itemID; i++){
+			it.next();
+		}
+		newArmor = it.next();
+
 		if (newArmor == null) {
+			System.out.println("Geçersiz işlem !");
 			return;
 		}
 		if (newArmor.getPrice() > 0) {
 			if (player.getMoney() >= newArmor.getPrice()) {
 				player.setMoney(player.getMoney() - newArmor.getPrice());
+				player.getInv().addItem(newArmor);
 				System.out.println(player.getInv().getArmorName() + " satın aldınız, Engellenen Hasar : " + player.getInv().getArmor());
 				System.out.println("Kalan Para :" + player.getMoney());
 			} else {
@@ -108,10 +102,7 @@ public class ToolStore extends NormalLoc {
 		while(it.hasNext()) {
 			System.out.println(i++ + ". " + it.next().toString());
 		}
-		
-		/*System.out.println("1. Tabanca\t<Para : 25 - Hasar : 2>");
-		System.out.println("2. K�l��\t<Para : 35 - Hasar : 3>");
-		System.out.println("3. T�fek\t<Para : 45 - Hasar : 7>");*/
+
 		System.out.println(i + ". Çıkış");
 		System.out.print("Silah Seçiniz : ");
 		int selWeaponID = scan.nextInt();
@@ -119,30 +110,26 @@ public class ToolStore extends NormalLoc {
 	}
 
 	public void buyWeapon(int itemID) {
-		Weapon newWeapon = null;
-		switch (itemID) {
-		case 1:
-			newWeapon = new Pistol();
-			break;
-		case 2:
-			newWeapon = new Sword();
-			break;
-		case 3:
-			newWeapon = new Shotgun();
-			break;
-		case 4:
+		int exitID = weapons.size() + 1;
+		if (itemID >= exitID){
 			System.out.println("Çıkış Yapılıyor.");
-			break;
-		default:
-			System.out.println("Geçersiz işlem !");
-			break;
+			return;
 		}
+
+		Weapon newWeapon = null;
+		Iterator<Weapon> it = weapons.iterator();
+		for(int i = 1; i < itemID; i++){
+			it.next();
+		}
+		newWeapon = it.next();
+
 		if (newWeapon == null) {
 			return;
 		}
 		if (newWeapon.getPrice() > 0) {
 			if (player.getMoney() >= newWeapon.getPrice()) {
 				player.setMoney(player.getMoney() - newWeapon.getPrice());
+				player.getInv().addItem(newWeapon);
 				System.out.println(player.getInv().getWeaponName() + " satın aldınız, Önceki Hasar :" + player.getDamage() + ", Yeni Hasar : "
 						+ player.getTotalDamage());
 				System.out.println("Kalan Para :" + player.getMoney());

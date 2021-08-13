@@ -1,6 +1,7 @@
 package src.Locations;
 import java.util.Scanner;
 
+import src.Material.Trophy;
 import src.Player;
 
 public abstract class Location {
@@ -29,6 +30,7 @@ public abstract class Location {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+
 	
 }
