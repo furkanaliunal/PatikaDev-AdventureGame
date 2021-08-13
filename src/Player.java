@@ -18,29 +18,29 @@ public class Player {
 			initPlayer("Samuray", 5, 21, 15);
 			break;
 		case 2:
-			initPlayer("Okçu", 7, 18, 20);
+			initPlayer("OkÃ§u", 7, 18, 20);
 			break;
 		case 3:
-			initPlayer("Şovalye", 8, 24, 5);
+			initPlayer("Åovalye", 8, 24, 5);
 			break;
 		default:
 			initPlayer("Samuray", 5, 21, 15);
 			break;
 		}
-		System.out.println("Karakter Oluşturuldu ! Adı=" + getcName() + " ,Hasar=" + getDamage() + " ,Sağlık="
+		System.out.println("Karakter OluÅŸturuldu ! AdÄ±=" + getcName() + " ,Hasar=" + getDamage() + " ,SaÄŸlÄ±k="
 				+ getHealthy() + " ,Para=" + getMoney());
 	}
 
 	public int chaMenu() {
-		System.out.println("Lütfen bir karakter seçiniz : ");
-		System.out.println("1- Samuray \t Hasar : 5 \t Sağlık :21 \t Para :15");
-		System.out.println("2- Okçu \t Hasar : 7 \t Sağlık :18 \t Para :20");
-		System.out.println("3- Şovalye \t Hasar : 8 \t Sağlık :24 \t Para :5");
-		System.out.print("Karater Seçiminiz : ");
+		System.out.println("LÃ¼tfen bir karakter seÃ§iniz : ");
+		System.out.println("1- Samuray \t Hasar : 5 \t SaÄŸlÄ±k :21 \t Para :15");
+		System.out.println("2- OkÃ§u \t Hasar : 7 \t SaÄŸlÄ±k :18 \t Para :20");
+		System.out.println("3- Åovalye \t Hasar : 8 \t SaÄŸlÄ±k :24 \t Para :5");
+		System.out.print("Karater SeÃ§iminiz : ");
 		int chaID = scan.nextInt();
 
 		while (chaID < 1 || chaID > 3) {
-			System.out.print("Lütfen geçerli bir karakter seçiniz : ");
+			System.out.print("LÃ¼tfen geÃ§erli bir karakter seÃ§iniz : ");
 			chaID = scan.nextInt();
 		}
 
