@@ -52,15 +52,31 @@ public abstract class BattleLoc extends Location {
 				String selCase = scan.nextLine();
 				selCase = selCase.toUpperCase();
 				if (selCase.equals("V")) {
-					System.out.println("Siz vurdunuz !");
-					obstacle.setHealth(obstacle.getHealth() - player.getTotalDamage());
-					afterHit();
-					if (obstacle.getHealth() > 0) {
+					if (Math.random() > 0.5f) {
+						System.out.println("İlk siz vurdunuz !");
+						obstacle.setHealth(obstacle.getHealth() - player.getTotalDamage());
+						afterHit();
+						if (obstacle.getHealth() > 0) {
+							System.out.println();
+							System.out.println("Canavar size vurdu !");
+							player.setHealthy(player.getHealthy() - (obstacle.getDamage() - player.getInv().getArmor()));
+
+
+						}
+					}else {
 						System.out.println();
-						System.out.println("Canavar size vurdu !");
+						System.out.println("Canavar önce vurdu !");
 						player.setHealthy(player.getHealthy() - (obstacle.getDamage() - player.getInv().getArmor()));
 						afterHit();
+						if (player.getHealthy() <= 0){
+							return false;
+						}
+
+						obstacle.setHealth(obstacle.getHealth() - player.getTotalDamage());
 					}
+
+
+					afterHit();
 				} else {
 					return false;
 				}
