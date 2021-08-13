@@ -7,4 +7,9 @@ public class Trophy extends Item{
 		this.materialType = MaterialType.Trophy;
 	}
 
+	@Override
+	public String toString() {
+		return this.getName();
+	}
+
 }
