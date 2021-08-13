@@ -20,7 +20,7 @@ public class Armor extends Item{
 	@Override
 	public String toString() {
 		//Example output: Hafif \t <Para : 15 - Hasar : 1>
-		return getName() + " \t <Para : " + getPrice()+"- Hasar : " + getArmor() + ">";
+		return getName() + " \t <Para : " + getPrice()+"- Zırh : " + getArmor() + ">";
 		
 	}
 }

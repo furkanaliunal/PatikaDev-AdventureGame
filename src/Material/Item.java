@@ -1,6 +1,6 @@
 package src.Material;
 
-public abstract class Item {
+public abstract class Item implements IMaterial {
 	private int price;
 	private String name;
 	MaterialType materialType;
@@ -25,8 +25,12 @@ public abstract class Item {
 	
 	@Override
 	public String toString() {
-		//Example output: Test eþyasý \t <Para : 15>
+		//Example output: Test eï¿½yasï¿½ \t <Para : 15>
 		return this.name + " \t <Para : " + this.price+">";
 		
+	}
+
+	public MaterialType getMaterialType(){
+		return this.materialType;
 	}
 }
