@@ -38,8 +38,15 @@ public class Inventory {
 			items.add(item);
 	}
 	
-	private Boolean hasItem(IMaterial item) {
-		return items.contains(item);
+	public Boolean hasItem(IMaterial item) {
+		for (IMaterial i : items){
+			if (i.getMaterialType() == MaterialType.Trophy) {
+				if (i.getName().equals(item.getName())){
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	public int getArmor() {
@@ -51,6 +58,16 @@ public class Inventory {
 	
 	public int getTrophyAmount() {
 		return this.trophyAmount;
+	}
+
+	public HashSet<Trophy> getTrophies(){
+		HashSet<Trophy> trophies = new HashSet<>();
+		for (IMaterial m : items){
+			if (m.getMaterialType() == MaterialType.Trophy){
+				trophies.add((Trophy)m);
+			}
+		}
+		return trophies;
 	}
 	
 	public String getWeaponName() {
