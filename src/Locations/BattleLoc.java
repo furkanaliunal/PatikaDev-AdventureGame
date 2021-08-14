@@ -17,13 +17,16 @@ public abstract class BattleLoc extends Location {
 	public boolean getLocation() {
 		int obsCount = obstacle.count();
 		System.out.println("Şuan buradasınız : " + this.getName());
-		System.out.println("Dikkatli ol! Burada " + obsCount + " tane " + obstacle.getName() + " ya��yor !");
+		System.out.println("Dikkatli ol! Burada " + obsCount + " tane " + obstacle.getName() + " yaşıyor !");
 		System.out.print("<S>avaş veya <K>aç :");
 		String selCase = scan.nextLine();
 		selCase = selCase.toUpperCase();
 		if (selCase.equals("S")) {
 			if (combat(obsCount)) {
 				System.out.println(this.getName() + " bölgesindeki tüm düşmanları temizlediniz !");
+				if (this.trophy == null){
+					return true;
+				}
 				if (player.getInv().hasItem(this.trophy)){
 					System.out.println("Bu alanın ödülü önceden de alınmış");
 					return true;
@@ -85,6 +88,10 @@ public abstract class BattleLoc extends Location {
 			if (obstacle.getHealth() < player.getHealthy()) {
 				System.out.println("Düşmanı yendiniz !");
 				player.setMoney(player.getMoney() + obstacle.getAward());
+				if (obstacle.getLoot() != null){
+					System.out.println("Yaratıktan " + obstacle.getLoot().toString() + " düştü.");
+					player.getInv().addItem(obstacle.getLoot());
+				}
 				System.out.println("Güncel Paranız : " + player.getMoney());
 				obstacle.setHealth(defObsHealth);
 			} else {
