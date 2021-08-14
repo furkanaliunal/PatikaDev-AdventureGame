@@ -1,12 +1,7 @@
 package src;
 import java.util.Scanner;
 
-import src.Locations.Cave;
-import src.Locations.Forest;
-import src.Locations.Location;
-import src.Locations.River;
-import src.Locations.SafeHouse;
-import src.Locations.ToolStore;
+import src.Locations.*;
 
 public class Game {
 	Player player;
@@ -33,10 +28,11 @@ public class Game {
 			System.out.println("2. Mağara --> Karşınıza belki zombi çıkabilir !");
 			System.out.println("3. Orman --> Karşınıza belki vampir çıkabilir !");
 			System.out.println("4. Nehir --> Karşınıza belki ayı çıkabilir !");
-			System.out.println("5. Mağaza --> Silah veya Zırh alabilirsiniz!");
+			System.out.println("5. Maden --> Karşınıza belki yılan çıkabilir!");
+			System.out.println("6. Mağaza --> Silah veya Zırh alabilirsiniz!");
 			System.out.print("Gitmek istediğiniz yer : ");
 			int selLoc = scan.nextInt();
-			while (selLoc < 0 || selLoc > 5) {
+			while (selLoc < 0 || selLoc > 6) {
 				System.out.print("Lütfen geçerli bir yer seçiniz : ");
 				selLoc = scan.nextInt();
 			}
@@ -52,6 +48,9 @@ public class Game {
 					location = new River(player);
 					break;
 				case 5:
+					location = new Mine(player);
+					break;
+				case 6:
 					location = new ToolStore(player);
 					break;
 				default:
