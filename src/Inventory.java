@@ -40,7 +40,12 @@ public class Inventory {
 	
 	public Boolean hasItem(IMaterial item) {
 		for (IMaterial i : items){
-			if (i.getMaterialType() == MaterialType.Trophy) {
+			/*if (i.getMaterialType() == MaterialType.Trophy) {
+				if (i.getName().equals(item.getName())){
+					return true;
+				}
+			}*/
+			if (i.getMaterialType() == item.getMaterialType()) {
 				if (i.getName().equals(item.getName())){
 					return true;
 				}
